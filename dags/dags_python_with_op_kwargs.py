@@ -1,7 +1,7 @@
 from airflow import DAG
 from airflow.providers.standard.operators.python import PythonOperator
 import pendulum, datetime
-from common_func import register2
+from common_func import regist2
 
 with DAG(
     dag_id='dags_python_with_op_kwargs',
@@ -12,7 +12,7 @@ with DAG(
     
     register2_t1 = PythonOperator(
         task_id="register2_t1",
-        python_callable=register2,
+        python_callable=regist2,
         op_args=['jihoon', 'male', 'kr', 'seoul'],
         op_kwargs={'email':'jihoon806@gmail.com', 'phone':'010'}
     )
