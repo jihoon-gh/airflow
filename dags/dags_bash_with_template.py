@@ -10,7 +10,7 @@ with DAG(
     catchup=False
 ) as dag:
     bash_t1 = BashOperator(
-        tash_id='bash_t1',
+        task_id='bash_t1',
         bash_command='echo "data_interval_end: {{ data_interval_end}} "',
     )
     bash_t2 = BashOperator(
